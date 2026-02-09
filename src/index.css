@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-charcoal antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg, #1B4332 0%, #2D5A47 100%);
+  }
+  
+  .gradient-bg-animated {
+    background: linear-gradient(135deg, #1B4332, #2D5A47, #1B4332);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .glass-nav {
+    @apply bg-cream/80 backdrop-blur-lg shadow-lg;
+  }
+  
+  .dot-pattern {
+    background-image: radial-gradient(circle, rgba(212, 165, 116, 0.1) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
